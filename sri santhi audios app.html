@@ -1,0 +1,1033 @@
+Sri santhi audios · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Santhi Audios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF6EC;
+    --paper:#FFFDF8;
+    --maroon-deep:#3E0E1A;
+    --maroon:#5C1526;
+    --maroon-soft:#7A2438;
+    --gold:#C9973E;
+    --gold-light:#E8C77A;
+    --amber:#E8722A;
+    --ink:#2A1D1A;
+    --ink-soft:#6E5C55;
+    --line:rgba(92,21,38,0.14);
+    --danger:#B3392C;
+    --good:#3C7A4E;
+    --warn:#B98317;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    min-height:100vh;
+  }
+  h1,h2,h3,.display{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    color:var(--maroon-deep);
+    margin:0;
+  }
+  .eyebrow{
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+  }
+  .app{
+    display:flex;
+    min-height:100vh;
+  }
+  /* ===== Sidebar ===== */
+  .sidebar{
+    width:230px;
+    flex-shrink:0;
+    background:var(--maroon-deep);
+    color:var(--gold-light);
+    display:flex;
+    flex-direction:column;
+    padding:26px 18px;
+    position:sticky;
+    top:0;
+    height:100vh;
+  }
+  .brandmark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:6px;
+  }
+  .eq{
+    display:flex;
+    align-items:flex-end;
+    gap:3px;
+    height:26px;
+  }
+  .eq span{
+    width:4px;
+    background:var(--amber);
+    border-radius:2px;
+    animation:pulse 1.1s ease-in-out infinite;
+  }
+  .eq span:nth-child(1){height:40%;animation-delay:0s;}
+  .eq span:nth-child(2){height:100%;animation-delay:0.15s;}
+  .eq span:nth-child(3){height:65%;animation-delay:0.3s;}
+  .eq span:nth-child(4){height:85%;animation-delay:0.45s;}
+  .eq span:nth-child(5){height:50%;animation-delay:0.6s;}
+  @keyframes pulse{
+    0%,100%{transform:scaleY(0.55);}
+    50%{transform:scaleY(1);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .eq span{animation:none;}
+  }
+  .brand-word{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:700;
+    font-size:19px;
+    color:var(--ivory);
+    line-height:1.05;
+  }
+  .brand-word small{
+    display:block;
+    font-family:'Work Sans',sans-serif;
+    font-size:10px;
+    letter-spacing:0.16em;
+    color:var(--gold);
+    font-weight:600;
+    margin-top:2px;
+  }
+  .since{
+    font-size:11px;
+    color:var(--maroon-soft);
+    background:rgba(232,199,122,0.08);
+    border:1px solid rgba(232,199,122,0.25);
+    color:var(--gold-light);
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:20px;
+    margin:14px 0 24px;
+    letter-spacing:0.04em;
+  }
+  nav{display:flex;flex-direction:column;gap:3px;flex:1;}
+  .navbtn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 12px;
+    border-radius:8px;
+    background:transparent;
+    border:none;
+    color:rgba(251,246,236,0.72);
+    font-family:'Work Sans',sans-serif;
+    font-size:14px;
+    font-weight:500;
+    text-align:left;
+    cursor:pointer;
+    transition:background 0.15s,color 0.15s;
+  }
+  .navbtn:hover{background:rgba(251,246,236,0.06);color:var(--ivory);}
+  .navbtn.active{background:var(--maroon);color:var(--gold-light);}
+  .navbtn .dot{width:6px;height:6px;border-radius:50%;background:var(--amber);opacity:0;flex-shrink:0;}
+  .navbtn.active .dot{opacity:1;}
+  .sidebar-foot{
+    border-top:1px solid rgba(251,246,236,0.12);
+    padding-top:14px;
+    font-size:11px;
+    color:rgba(251,246,236,0.5);
+    line-height:1.6;
+  }
+  /* ===== Main ===== */
+  main{
+    flex:1;
+    padding:38px 46px;
+    max-width:980px;
+  }
+  .pagehead{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .pagehead h1{font-size:34px;}
+  .pagehead p{color:var(--ink-soft);font-size:14px;margin-top:4px;}
+  .btn{
+    font-family:'Work Sans',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    padding:9px 16px;
+    border-radius:7px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    color:var(--maroon-deep);
+    cursor:pointer;
+    transition:all 0.15s;
+  }
+  .btn:hover{border-color:var(--gold);background:#fff;}
+  .btn-primary{
+    background:var(--maroon-deep);
+    color:var(--ivory);
+    border-color:var(--maroon-deep);
+  }
+  .btn-primary:hover{background:var(--maroon);border-color:var(--maroon);}
+  .btn-danger{color:var(--danger);border-color:rgba(179,57,44,0.3);}
+  .btn-danger:hover{background:rgba(179,57,44,0.06);border-color:var(--danger);}
+  .btn-sm{padding:5px 11px;font-size:12px;}
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 24px;
+  }
+  .divider-eq{
+    display:flex;
+    align-items:flex-end;
+    gap:5px;
+    height:20px;
+    margin:26px 0;
+    opacity:0.5;
+  }
+  .divider-eq span{
+    flex:1;
+    max-width:14px;
+    background:var(--gold);
+    border-radius:2px;
+  }
+  .field{margin-bottom:14px;}
+  .field label{
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-bottom:5px;
+    letter-spacing:0.02em;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;
+    padding:9px 11px;
+    border-radius:7px;
+    border:1px solid var(--line);
+    background:var(--ivory);
+    font-family:'Work Sans',sans-serif;
+    font-size:14px;
+    color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:2px solid var(--gold);
+    outline-offset:1px;
+    border-color:transparent;
+  }
+  .field textarea{resize:vertical;min-height:64px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;}
+  .readrow{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+    gap:16px;
+  }
+  .readrow:last-child{border-bottom:none;}
+  .readrow .k{color:var(--ink-soft);font-weight:500;}
+  .readrow .v{font-weight:600;text-align:right;}
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    margin-top:18px;
+  }
+  .service-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--amber);
+    border-radius:10px;
+    padding:18px;
+  }
+  .service-card h3{font-size:19px;color:var(--maroon);margin-bottom:6px;}
+  .service-card p{font-size:13px;color:var(--ink-soft);line-height:1.55;margin:0;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
+  th{
+    text-align:left;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+    padding:0 10px 10px;
+    border-bottom:2px solid var(--line);
+  }
+  td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  .avatar{
+    width:32px;height:32px;border-radius:50%;
+    background:var(--gold-light);
+    display:inline-flex;align-items:center;justify-content:center;
+    font-weight:700;color:var(--maroon-deep);font-size:13px;
+    margin-right:10px;flex-shrink:0;
+  }
+  .empname{display:flex;align-items:center;}
+  .badge{
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .badge-role{background:rgba(92,21,38,0.08);color:var(--maroon-deep);}
+  .rowactions{display:flex;gap:6px;justify-content:flex-end;}
+  .modal-backdrop{
+    position:fixed;inset:0;
+    background:rgba(42,29,26,0.45);
+    display:flex;align-items:center;justify-content:center;
+    z-index:50;
+    padding:20px;
+  }
+  .modal{
+    background:var(--paper);
+    border-radius:14px;
+    padding:26px 28px;
+    width:100%;max-width:440px;
+    max-height:88vh;overflow-y:auto;
+  }
+  .modal h2{font-size:22px;margin-bottom:16px;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px;}
+  .empty{
+    text-align:center;
+    padding:40px 20px;
+    color:var(--ink-soft);
+  }
+  .empty .eq{margin:0 auto 14px;justify-content:center;}
+  .attendance-header{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;
+  }
+  .attendance-header input[type=date]{
+    padding:8px 11px;border-radius:7px;border:1px solid var(--line);
+    background:var(--paper);font-family:'Work Sans',sans-serif;font-size:14px;
+  }
+  .stat-pill{
+    font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px;
+  }
+  .pill-present{background:rgba(60,122,78,0.1);color:var(--good);}
+  .pill-absent{background:rgba(179,57,44,0.1);color:var(--danger);}
+  .pill-leave{background:rgba(185,131,23,0.1);color:var(--warn);}
+  .status-btns{display:flex;gap:5px;}
+  .stbtn{
+    border:1px solid var(--line);
+    background:var(--ivory);
+    padding:5px 10px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:600;
+    cursor:pointer;
+    color:var(--ink-soft);
+  }
+  .stbtn.on-present.active{background:var(--good);color:#fff;border-color:var(--good);}
+  .stbtn.on-absent.active{background:var(--danger);color:#fff;border-color:var(--danger);}
+  .stbtn.on-leave.active{background:var(--warn);color:#fff;border-color:var(--warn);}
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px;
+  }
+  .contact-item{
+    background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;
+  }
+  .contact-item .eyebrow{margin-bottom:6px;display:block;}
+  .contact-item .val{font-size:16px;font-weight:600;color:var(--ink);}
+  .contact-item a{color:var(--maroon);text-decoration:none;}
+  .edit-toggle{display:flex;align-items:center;gap:8px;}
+  .saved-flash{
+    font-size:12px;color:var(--good);font-weight:600;opacity:0;
+    transition:opacity 0.3s;
+  }
+  .saved-flash.show{opacity:1;}
+  ::placeholder{color:#B7A99F;}
+  .mobiletop{display:none;}
+  @media (max-width:860px){
+    .app{flex-direction:column;}
+    .sidebar{
+      width:100%;height:auto;position:relative;
+      flex-direction:row;align-items:center;padding:14px 16px;
+      overflow-x:auto;gap:14px;
+    }
+    .sidebar-foot{display:none;}
+    .since{display:none;}
+    nav{flex-direction:row;flex:none;}
+    main{padding:24px 18px;}
+    .grid2{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+ 
+  <aside class="sidebar">
+    <div class="brandmark">
+      <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="brand-word">Sri Santhi<small>AUDIOS</small></div>
+    </div>
+    <div class="since">Serving since 1976</div>
+    <nav id="nav"></nav>
+    <div class="sidebar-foot">
+      Namakkal, Tamil Nadu<br>
+      8861512121 / 8148460824
+    </div>
+  </aside>
+ 
+  <main id="main"></main>
+</div>
+ 
+<div id="modal-root"></div>
+ 
+<script>
+/* ---------------- storage helpers ---------------- */
+const SHARED = true; // company data is shared so all staff see the same records
+ 
+async function storeGet(key, fallback){
+  try{
+    const r = await window.storage.get(key, SHARED);
+    return r ? JSON.parse(r.value) : fallback;
+  }catch(e){
+    return fallback;
+  }
+}
+async function storeSet(key, value){
+  try{
+    await window.storage.set(key, JSON.stringify(value), SHARED);
+    return true;
+  }catch(e){
+    console.error('Storage error', e);
+    return false;
+  }
+}
+ 
+/* ---------------- default data ---------------- */
+const DEFAULT_COMPANY = {
+  name: "Sri Santhi Audios",
+  tagline: "Wedding Decorations \u2022 DJ for Functions \u2022 Annual Day Celebrations \u2022 Other Functions",
+  established: 1976,
+  about: "Sri Santhi Audios has been serving Namakkal and the surrounding areas since 1976, bringing sound, light and decor together for weddings, functions, and annual day celebrations.",
+  phone1: "8861512121",
+  phone2: "8148460824",
+  email: "santhiaudiosnmk@gmail.com",
+  address: "40, Paramathi Rd, S P Pudur, Thillaipuram, Namakkal, Tamil Nadu 637001"
+};
+ 
+const DEFAULT_SERVICES = [
+  { id:"s1", title:"Wedding Decorations", desc:"Stage, entrance and hall decoration for weddings, with flowers, lighting and themed backdrops." },
+  { id:"s2", title:"DJ for Functions", desc:"Professional DJ and sound setup for receptions, engagements, birthdays and private parties." },
+  { id:"s3", title:"Annual Day Celebrations", desc:"Full sound, stage and decor support for school and college annual day events." },
+  { id:"s4", title:"Other Functions", desc:"Sound, lighting and decoration for house-warmings, temple festivals and corporate events." }
+];
+ 
+let company = null;
+let services = [];
+let employees = [];
+let currentPage = 'overview';
+let attendanceDate = new Date().toISOString().slice(0,10);
+let attendanceData = {};
+const ATTENDANCE_EDIT_PASSWORD = '1234';
+ 
+const NAV_ITEMS = [
+  { id:'overview', label:'Company overview' },
+  { id:'services', label:'Services' },
+  { id:'employees', label:'Employees' },
+  { id:'attendance', label:'Attendance register' },
+  { id:'contact', label:'Contact' }
+];
+ 
+function initials(name){
+  return name.split(' ').filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+}
+function esc(s){
+  const d = document.createElement('div');
+  d.innerText = s == null ? '' : s;
+  return d.innerHTML;
+}
+function uid(){ return 'e' + Math.random().toString(36).slice(2,9); }
+ 
+/* ---------------- nav ---------------- */
+function renderNav(){
+  const nav = document.getElementById('nav');
+  nav.innerHTML = NAV_ITEMS.map(item => `
+    <button class="navbtn ${currentPage===item.id?'active':''}" data-page="${item.id}">
+      <span class="dot"></span>${item.label}
+    </button>
+  `).join('');
+  nav.querySelectorAll('.navbtn').forEach(b=>{
+    b.addEventListener('click', ()=>{ currentPage = b.dataset.page; render(); });
+  });
+}
+ 
+/* ---------------- pages ---------------- */
+function pageOverview(){
+  return `
+    <div class="pagehead">
+      <div>
+        <p class="eyebrow">Company overview</p>
+        <h1>${esc(company.name)}</h1>
+        <p>${esc(company.tagline)}</p>
+      </div>
+      <button class="btn" id="edit-company-btn">Edit details</button>
+    </div>
+    <div class="card">
+      <p style="margin:0 0 18px;line-height:1.7;color:var(--ink);">${esc(company.about)}</p>
+      <div class="divider-eq">${Array.from({length:14}).map((_,i)=>`<span style="height:${8+((i*37)%18)}px"></span>`).join('')}</div>
+      <div class="grid2">
+        <div class="readrow"><span class="k">Established</span><span class="v">${esc(company.established)}</span></div>
+        <div class="readrow"><span class="k">Years of service</span><span class="v">${new Date().getFullYear()-company.established}+ years</span></div>
+        <div class="readrow"><span class="k">Phone</span><span class="v">${esc(company.phone1)}</span></div>
+        <div class="readrow"><span class="k">Alternate phone</span><span class="v">${esc(company.phone2)}</span></div>
+        <div class="readrow"><span class="k">Email</span><span class="v">${esc(company.email)}</span></div>
+        <div class="readrow"><span class="k">Team size</span><span class="v">${employees.length} employees</span></div>
+      </div>
+    </div>
+  `;
+}
+ 
+function pageServices(){
+  return `
+    <div class="pagehead">
+      <div>
+        <p class="eyebrow">What we offer</p>
+        <h1>Services</h1>
+        <p>Edit descriptions to match how each service is currently offered.</p>
+      </div>
+      <button class="btn" id="edit-services-btn">Edit services</button>
+    </div>
+    <div class="services-grid">
+      ${services.map(s=>`
+        <div class="service-card">
+          <h3>${esc(s.title)}</h3>
+          <p>${esc(s.desc)}</p>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+ 
+function pageEmployees(){
+  const rows = employees.map(e=>`
+    <tr>
+      <td>
+        <div class="empname">
+          <span class="avatar">${initials(e.name)}</span>
+          <div>
+            <div style="font-weight:600;">${esc(e.name)}</div>
+            <div style="font-size:12px;color:var(--ink-soft);">Joined ${esc(e.joined || '\u2014')}</div>
+          </div>
+        </div>
+      </td>
+      <td><span class="badge badge-role">${esc(e.role)}</span></td>
+      <td>${esc(e.phone || '\u2014')}</td>
+      <td>
+        <div class="rowactions">
+          <button class="btn btn-sm" data-edit-emp="${e.id}">Edit</button>
+          <button class="btn btn-sm btn-danger" data-del-emp="${e.id}">Remove</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+ 
+  return `
+    <div class="pagehead">
+      <div>
+        <p class="eyebrow">Team</p>
+        <h1>Employees</h1>
+        <p>${employees.length} employee${employees.length===1?'':'s'} on record.</p>
+      </div>
+      <button class="btn btn-primary" id="add-emp-btn">Add employee</button>
+    </div>
+    <div class="card" style="padding:0;overflow-x:auto;">
+      ${employees.length === 0 ? `
+        <div class="empty">
+          <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+          <p>No employees added yet. Add your first team member to get started.</p>
+        </div>
+      ` : `
+        <table>
+          <thead><tr><th>Name</th><th>Role</th><th>Phone</th><th></th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `}
+    </div>
+  `;
+}
+ 
+function pageAttendance(){
+  const dayRecord = attendanceData[attendanceDate] || {};
+  const counts = { present:0, absent:0, leave:0 };
+  employees.forEach(e=>{
+    const st = dayRecord[e.id];
+    if(st && counts[st] !== undefined) counts[st]++;
+  });
+ 
+  const rows = employees.map(e=>{
+    const st = dayRecord[e.id] || '';
+    return `
+      <tr>
+        <td>
+          <div class="empname">
+            <span class="avatar">${initials(e.name)}</span>
+            <div style="font-weight:600;">${esc(e.name)}</div>
+          </div>
+        </td>
+        <td><span class="badge badge-role">${esc(e.role)}</span></td>
+        <td>
+          <div class="status-btns">
+            <button class="stbtn on-present ${st==='present'?'active':''}" data-att="${e.id}" data-status="present">Present</button>
+            <button class="stbtn on-absent ${st==='absent'?'active':''}" data-att="${e.id}" data-status="absent">Absent</button>
+            <button class="stbtn on-leave ${st==='leave'?'active':''}" data-att="${e.id}" data-status="leave">Leave</button>
+          </div>
+        </td>
+      </tr>
+    `;
+  }).join('');
+ 
+  return `
+    <div class="pagehead">
+      <div>
+        <p class="eyebrow">Daily register</p>
+        <h1>Attendance</h1>
+        <p>Mark attendance for the selected date. Once saved, an entry is locked and needs the password to change.</p>
+      </div>
+      <span class="saved-flash" id="att-saved">Saved</span>
+    </div>
+    <div class="attendance-header">
+      <input type="date" id="att-date" value="${attendanceDate}">
+      <span class="stat-pill pill-present">${counts.present} present</span>
+      <span class="stat-pill pill-absent">${counts.absent} absent</span>
+      <span class="stat-pill pill-leave">${counts.leave} on leave</span>
+    </div>
+    <div class="card" style="padding:0;overflow-x:auto;">
+      ${employees.length === 0 ? `
+        <div class="empty">
+          <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+          <p>Add employees first, then mark attendance for each day here.</p>
+        </div>
+      ` : `
+        <table>
+          <thead><tr><th>Name</th><th>Role</th><th>Status</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      `}
+    </div>
+  `;
+}
+ 
+function pageContact(){
+  return `
+    <div class="pagehead">
+      <div>
+        <p class="eyebrow">Reach us</p>
+        <h1>Contact</h1>
+        <p>Business contact details for Sri Santhi Audios.</p>
+      </div>
+      <button class="btn" id="edit-contact-btn">Edit details</button>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="eyebrow">Phone</span>
+        <div class="val"><a href="tel:${esc(company.phone1)}">${esc(company.phone1)}</a></div>
+      </div>
+      <div class="contact-item">
+        <span class="eyebrow">Alternate phone</span>
+        <div class="val"><a href="tel:${esc(company.phone2)}">${esc(company.phone2)}</a></div>
+      </div>
+      <div class="contact-item">
+        <span class="eyebrow">Email</span>
+        <div class="val"><a href="mailto:${esc(company.email)}">${esc(company.email)}</a></div>
+      </div>
+      <div class="contact-item">
+        <span class="eyebrow">Address</span>
+        <div class="val">${esc(company.address)}</div>
+      </div>
+    </div>
+  `;
+}
+ 
+/* ---------------- modals ---------------- */
+function closeModal(){
+  document.getElementById('modal-root').innerHTML = '';
+}
+ 
+function openCompanyEditModal(){
+  const root = document.getElementById('modal-root');
+  root.innerHTML = `
+    <div class="modal-backdrop" id="mb">
+      <div class="modal">
+        <h2>Edit company details</h2>
+        <div class="field"><label for="f-name">Company name</label><input id="f-name" value="${esc(company.name)}"></div>
+        <div class="field"><label for="f-tagline">Tagline</label><input id="f-tagline" value="${esc(company.tagline)}"></div>
+        <div class="field"><label for="f-about">About</label><textarea id="f-about">${esc(company.about)}</textarea></div>
+        <div class="field">
+          <label>Established (year)</label>
+          <input value="${esc(company.established)}" disabled style="opacity:0.65;cursor:not-allowed;">
+          <div style="font-size:11px;color:var(--ink-soft);margin-top:4px;">Founding year is fixed and cannot be edited.</div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn" id="cancel-modal">Cancel</button>
+          <button class="btn btn-primary" id="save-company">Save changes</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('cancel-modal').addEventListener('click', closeModal);
+  document.getElementById('mb').addEventListener('click', (e)=>{ if(e.target.id==='mb') closeModal(); });
+  document.getElementById('save-company').addEventListener('click', async ()=>{
+    company.name = document.getElementById('f-name').value.trim() || company.name;
+    company.tagline = document.getElementById('f-tagline').value.trim();
+    company.about = document.getElementById('f-about').value.trim();
+    await storeSet('company', company);
+    closeModal();
+    render();
+  });
+}
+ 
+function openContactEditModal(){
+  const root = document.getElementById('modal-root');
+  root.innerHTML = `
+    <div class="modal-backdrop" id="mb">
+      <div class="modal">
+        <h2>Edit contact details</h2>
+        <div class="field"><label for="f-p1">Phone</label><input id="f-p1" value="${esc(company.phone1)}"></div>
+        <div class="field"><label for="f-p2">Alternate phone</label><input id="f-p2" value="${esc(company.phone2)}"></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" value="${esc(company.email)}"></div>
+        <div class="field"><label for="f-addr">Address</label><textarea id="f-addr">${esc(company.address)}</textarea></div>
+        <div class="modal-actions">
+          <button class="btn" id="cancel-modal">Cancel</button>
+          <button class="btn btn-primary" id="save-contact">Save changes</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('cancel-modal').addEventListener('click', closeModal);
+  document.getElementById('mb').addEventListener('click', (e)=>{ if(e.target.id==='mb') closeModal(); });
+  document.getElementById('save-contact').addEventListener('click', async ()=>{
+    company.phone1 = document.getElementById('f-p1').value.trim();
+    company.phone2 = document.getElementById('f-p2').value.trim();
+    company.email = document.getElementById('f-email').value.trim();
+    company.address = document.getElementById('f-addr').value.trim();
+    await storeSet('company', company);
+    closeModal();
+    render();
+  });
+}
+ 
+function openServicesEditModal(){
+  const root = document.getElementById('modal-root');
+  root.innerHTML = `
+    <div class="modal-backdrop" id="mb">
+      <div class="modal" style="max-width:560px;">
+        <h2>Edit services</h2>
+        ${services.map((s,i)=>`
+          <div class="field">
+            <label for="s-title-${i}">Service ${i+1} title</label>
+            <input id="s-title-${i}" value="${esc(s.title)}">
+          </div>
+          <div class="field">
+            <label for="s-desc-${i}">Description</label>
+            <textarea id="s-desc-${i}">${esc(s.desc)}</textarea>
+          </div>
+        `).join('<div class="divider-eq" style="margin:14px 0;"></div>')}
+        <div class="modal-actions">
+          <button class="btn" id="cancel-modal">Cancel</button>
+          <button class="btn btn-primary" id="save-services">Save changes</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('cancel-modal').addEventListener('click', closeModal);
+  document.getElementById('mb').addEventListener('click', (e)=>{ if(e.target.id==='mb') closeModal(); });
+  document.getElementById('save-services').addEventListener('click', async ()=>{
+    services.forEach((s,i)=>{
+      s.title = document.getElementById('s-title-'+i).value.trim() || s.title;
+      s.desc = document.getElementById('s-desc-'+i).value.trim();
+    });
+    await storeSet('services', services);
+    closeModal();
+    render();
+  });
+}
+ 
+function openEmployeeModal(empId){
+  const editing = !!empId;
+  const emp = editing ? employees.find(e=>e.id===empId) : { name:'', role:'', phone:'', joined:'' };
+  const root = document.getElementById('modal-root');
+  root.innerHTML = `
+    <div class="modal-backdrop" id="mb">
+      <div class="modal">
+        <h2>${editing ? 'Edit employee' : 'Add employee'}</h2>
+        <div class="field"><label for="e-name">Full name</label><input id="e-name" value="${esc(emp.name)}" placeholder="Employee name"></div>
+        <div class="field"><label for="e-role">Role</label><input id="e-role" value="${esc(emp.role)}" placeholder="e.g. DJ operator, Decorator, Driver"></div>
+        <div class="field"><label for="e-phone">Phone</label><input id="e-phone" value="${esc(emp.phone)}" placeholder="10-digit phone number"></div>
+        <div class="field"><label for="e-joined">Date joined</label><input id="e-joined" type="date" value="${esc(emp.joined)}"></div>
+        <div class="modal-actions">
+          <button class="btn" id="cancel-modal">Cancel</button>
+          <button class="btn btn-primary" id="save-emp">${editing ? 'Save changes' : 'Add employee'}</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('cancel-modal').addEventListener('click', closeModal);
+  document.getElementById('mb').addEventListener('click', (e)=>{ if(e.target.id==='mb') closeModal(); });
+  document.getElementById('save-emp').addEventListener('click', async ()=>{
+    const name = document.getElementById('e-name').value.trim();
+    if(!name){ document.getElementById('e-name').focus(); return; }
+    const role = document.getElementById('e-role').value.trim() || 'Staff';
+    const phone = document.getElementById('e-phone').value.trim();
+    const joined = document.getElementById('e-joined').value;
+    if(editing){
+      emp.name = name; emp.role = role; emp.phone = phone; emp.joined = joined;
+    } else {
+      employees.push({ id: uid(), name, role, phone, joined });
+    }
+    await storeSet('employees', employees);
+    closeModal();
+    render();
+  });
+}
+ 
+async function removeEmployee(empId){
+  employees = employees.filter(e=>e.id!==empId);
+  await storeSet('employees', employees);
+  render();
+}
+
+function openEmployeeGuardModal(action, empId){
+  const isDelete = action === 'delete';
+  const root = document.getElementById('modal-root');
+  root.innerHTML = `
+    <div class="modal-backdrop" id="mb">
+      <div class="modal" style="max-width:360px;">
+        <h2>Enter password</h2>
+        <p style="font-size:13px;color:var(--ink-soft);margin:-6px 0 14px;">${isDelete ? 'Removing an employee needs the password.' : 'Editing an employee needs the password.'}</p>
+        <div class="field">
+          <label for="emp-pw">Password</label>
+          <input id="emp-pw" type="password" autocomplete="off" placeholder="Enter password">
+        </div>
+        <p id="emp-pw-error" style="display:none;color:var(--danger);font-size:12px;margin:-8px 0 0;">Incorrect password. Try again.</p>
+        <div class="modal-actions">
+          <button class="btn" id="cancel-modal">Cancel</button>
+          <button class="btn btn-primary" id="unlock-emp">Unlock</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('cancel-modal').addEventListener('click', closeModal);
+  document.getElementById('mb').addEventListener('click', (e)=>{ if(e.target.id==='mb') closeModal(); });
+  const pwInput = document.getElementById('emp-pw');
+  const tryUnlock = ()=>{
+    if(pwInput.value === ATTENDANCE_EDIT_PASSWORD){
+      if(isDelete){
+        closeModal();
+        removeEmployee(empId);
+      } else {
+        openEmployeeModal(empId);
+      }
+    } else {
+      document.getElementById('emp-pw-error').style.display = 'block';
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  };
+  document.getElementById('unlock-emp').addEventListener('click', tryUnlock);
+  pwInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') tryUnlock(); });
+  pwInput.focus();
+}
+ 
+function setAttendance(empId, status){
+  const day = attendanceData[attendanceDate] || {};
+  const existing = day[empId];
+  if(existing !== undefined){
+    // Already saved for this date — require the password before it can change.
+    openAttendanceUnlockModal(empId, status);
+    return;
+  }
+  applyAttendance(empId, status);
+}
+
+async function applyAttendance(empId, status){
+  if(!attendanceData[attendanceDate]) attendanceData[attendanceDate] = {};
+  const day = attendanceData[attendanceDate];
+  day[empId] = (day[empId] === status) ? undefined : status;
+  if(day[empId] === undefined) delete day[empId];
+  await storeSet('attendance:'+attendanceDate, day);
+  render();
+  const flash = document.getElementById('att-saved');
+  if(flash){
+    flash.classList.add('show');
+    setTimeout(()=>flash.classList.remove('show'), 1200);
+  }
+}
+
+function openAttendanceUnlockModal(empId, status){
+  const root = document.getElementById('modal-root');
+  root.innerHTML = `
+    <div class="modal-backdrop" id="mb">
+      <div class="modal" style="max-width:360px;">
+        <h2>Enter password to change</h2>
+        <p style="font-size:13px;color:var(--ink-soft);margin:-6px 0 14px;">Attendance already saved for this date. Enter the password to edit it.</p>
+        <div class="field">
+          <label for="att-pw">Password</label>
+          <input id="att-pw" type="password" autocomplete="off" placeholder="Enter password">
+        </div>
+        <p id="att-pw-error" style="display:none;color:var(--danger);font-size:12px;margin:-8px 0 0;">Incorrect password. Try again.</p>
+        <div class="modal-actions">
+          <button class="btn" id="cancel-modal">Cancel</button>
+          <button class="btn btn-primary" id="unlock-att">Unlock &amp; change</button>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('cancel-modal').addEventListener('click', closeModal);
+  document.getElementById('mb').addEventListener('click', (e)=>{ if(e.target.id==='mb') closeModal(); });
+  const pwInput = document.getElementById('att-pw');
+  const tryUnlock = ()=>{
+    if(pwInput.value === ATTENDANCE_EDIT_PASSWORD){
+      closeModal();
+      applyAttendance(empId, status);
+    } else {
+      document.getElementById('att-pw-error').style.display = 'block';
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  };
+  document.getElementById('unlock-att').addEventListener('click', tryUnlock);
+  pwInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') tryUnlock(); });
+  pwInput.focus();
+}
+ 
+/* ---------------- render ---------------- */
+function bindPageEvents(){
+  const editCompanyBtn = document.getElementById('edit-company-btn');
+  if(editCompanyBtn) editCompanyBtn.addEventListener('click', openCompanyEditModal);
+ 
+  const editServicesBtn = document.getElementById('edit-services-btn');
+  if(editServicesBtn) editServicesBtn.addEventListener('click', openServicesEditModal);
+ 
+  const editContactBtn = document.getElementById('edit-contact-btn');
+  if(editContactBtn) editContactBtn.addEventListener('click', openContactEditModal);
+ 
+  const addEmpBtn = document.getElementById('add-emp-btn');
+  if(addEmpBtn) addEmpBtn.addEventListener('click', ()=>openEmployeeModal(null));
+ 
+  document.querySelectorAll('[data-edit-emp]').forEach(b=>{
+    b.addEventListener('click', ()=>openEmployeeGuardModal('edit', b.dataset.editEmp));
+  });
+  document.querySelectorAll('[data-del-emp]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      if(confirm('Remove this employee from the record?')) openEmployeeGuardModal('delete', b.dataset.delEmp);
+    });
+  });
+ 
+  const dateInput = document.getElementById('att-date');
+  if(dateInput){
+    dateInput.addEventListener('change', async ()=>{
+      attendanceDate = dateInput.value;
+      attendanceData[attendanceDate] = await storeGet('attendance:'+attendanceDate, {});
+      render();
+    });
+  }
+  document.querySelectorAll('[data-att]').forEach(b=>{
+    b.addEventListener('click', ()=>setAttendance(b.dataset.att, b.dataset.status));
+  });
+}
+ 
+function render(){
+  renderNav();
+  const main = document.getElementById('main');
+  const pages = {
+    overview: pageOverview,
+    services: pageServices,
+    employees: pageEmployees,
+    attendance: pageAttendance,
+    contact: pageContact
+  };
+  main.innerHTML = pages[currentPage]();
+  bindPageEvents();
+}
+ 
+/* ---------------- boot ---------------- */
+async function boot(){
+  document.getElementById('main').innerHTML = `
+    <div class="empty" style="padding-top:120px;">
+      <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+      <p>Loading Sri Santhi Audios\u2026</p>
+    </div>
+  `;
+ 
+  company = await storeGet('company', DEFAULT_COMPANY);
+  services = await storeGet('services', DEFAULT_SERVICES);
+  employees = await storeGet('employees', []);
+  attendanceData[attendanceDate] = await storeGet('attendance:'+attendanceDate, {});
+ 
+  if(!company){
+    company = DEFAULT_COMPANY;
+    await storeSet('company', company);
+  }
+  // Established year is fixed and non-editable; email/alternate phone were updated.
+  // Correct any previously stored values so the change takes effect everywhere.
+  let companyFixed = false;
+  if(company.established !== 1976){ company.established = 1976; companyFixed = true; }
+  if(company.email !== 'santhiaudiosnmk@gmail.com'){ company.email = 'santhiaudiosnmk@gmail.com'; companyFixed = true; }
+  if(company.phone2 !== '8148460824'){ company.phone2 = '8148460824'; companyFixed = true; }
+  if(companyFixed){ await storeSet('company', company); }
+  if(!services || services.length === 0){
+    services = DEFAULT_SERVICES;
+    await storeSet('services', services);
+  }
+ 
+  render();
+}
+ 
+boot();
+</script>
+</body>
+</html>
+
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBtLQCl9vvdGh9DZVZxl-d1MdmBIkXJAIQ",
+  authDomain: "sri-santhi-audios.firebaseapp.com",
+  databaseURL: "https://sri-santhi-audios-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "sri-santhi-audios",
+  storageBucket: "sri-santhi-audios.firebasestorage.app",
+  messagingSenderId: "49127791576",
+  appId: "1:49127791576:web:068700e3b7bd3c6187b0ad",
+  measurementId: "G-D3B4QS2XB2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
